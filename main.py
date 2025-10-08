@@ -5,6 +5,12 @@
 ############################################################
 # 1. ライブラリの読み込み
 ############################################################
+# 警告メッセージの抑制
+import warnings
+import urllib3
+warnings.filterwarnings("ignore", category=UserWarning, module="urllib3")
+urllib3.disable_warnings(urllib3.exceptions.NotOpenSSLWarning)
+
 # 「.env」ファイルから環境変数を読み込むための関数
 from dotenv import load_dotenv
 # ログ出力を行うためのモジュール
